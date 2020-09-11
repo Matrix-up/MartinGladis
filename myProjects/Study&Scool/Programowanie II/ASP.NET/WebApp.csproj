@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>0241d5af-d9d4-46e7-bae9-20a02609b41b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Nowy folder\**" />
+    <Compile Remove="Pages\Nowy folder\**" />
+    <Compile Remove="Pages\Shared\Nowy folder\**" />
+    <Content Remove="Nowy folder\**" />
+    <Content Remove="Pages\Nowy folder\**" />
+    <Content Remove="Pages\Shared\Nowy folder\**" />
+    <EmbeddedResource Remove="Nowy folder\**" />
+    <EmbeddedResource Remove="Pages\Nowy folder\**" />
+    <EmbeddedResource Remove="Pages\Shared\Nowy folder\**" />
+    <None Remove="Nowy folder\**" />
+    <None Remove="Pages\Nowy folder\**" />
+    <None Remove="Pages\Shared\Nowy folder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\9.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+  </ItemGroup>
+
+</Project>

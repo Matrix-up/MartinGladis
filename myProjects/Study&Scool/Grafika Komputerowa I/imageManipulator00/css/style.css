@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    width: 960px;
+}
+
+.menu-bar {
+    background: #ccc;
+    text-align: center;
+    float: left;
+}
+
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+
+.menu-bar ul li {
+    width: 110px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.active, .menu-bar ul li:hover {
+    background: #666;
+}
+
+.sub-menu-1 {
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 {
+    display: block;
+    position: absolute;
+    background: #aaa;
+    margin-top: 5px;
+    margin-left: -15px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
+    display: block;
+    margin: 5px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li {
+    width: 180px;
+    padding: 1px;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child {
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul a:hover {
+    color: #000;
+}
+
+.sub-menu-2, .sub-menu-3 {
+    display: none;
+}
+
+.start-sub-menu-2:hover .sub-menu-2 {
+    position: absolute;
+    display: block;
+    margin-top: -30px;
+    margin-left: 150px;
+    background: #999;
+}
+
+.start-sub-menu-3:hover .sub-menu-3 {
+    position: absolute;
+    display: block;
+    margin-top: -30px;
+    margin-left: 150px;
+    background: #777;
+}
+
+.canvas{
+    width: 256px;
+    height: 256px;
+    background-color: #ccc;
+    margin: 4px;
+}
+.canvasR{
+    background-color: #ccc;
+    margin: 4px;
+}
+.canvasRow{
+    display:inline-block;
+}

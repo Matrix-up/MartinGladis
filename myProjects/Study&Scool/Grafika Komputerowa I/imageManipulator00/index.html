@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Bitmap Manipulator</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/colorCounter.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/layout.js"></script>
+        <script src="js/geometry.js"></script>
+        <script src="js/color.js"></script>
+        <script src="js/histogram.js"></script>
+        <script src="js/pt1.js"></script>
+        <script src="js/steganography.js"></script>
+        <script src="js/ownWork.js"></script>
+    </head>
+    <body onLoad="updateCanvas();">
+        <div class="menu-bar">
+            <ul>
+                <li><a href="#">Bitmaps &#9660;</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li><a href="javascript:setBitmap( 'img/lena256.png' )">Lena256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/airplane256.png' )">Airplane256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/cicada256.png' )">Cicada256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/mandrill256.png' )">Mandrill256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/monkey256.png' )">Monkey256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/parrots256.png' )">Parrots256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/tire256.png' )">Tire256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/black_rectangles256.png' )">Black_rectangles256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/cross_board256.png' )">Cross_board256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/six_squares256.png' )">Six_squares256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/for_histogram256.png' )" >For_histogram256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/grid256.png' )">Grid256</a></li>
+                            <li><a href="javascript:setBitmap( 'img/lena_distortions256.png' )">Lena_distortions256</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Layout &#9660;</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li class="start-sub-menu-2"><a href="#">Open &nbsp; &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doOpenPhotos()">Open photos</a></li>
+                                        <li><a href="javascript:doOpenIndustrial()">Open industrials</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="start-sub-menu-2"><a href="#">Generate &nbsp; &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doColors()">Colors</a></li>
+                                        <li class="start-sub-menu-3"><a href="#">Noise &nbsp; &#9654;</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="javascript:doNoise1()">Noise v. 1</a></li>
+                                                    <li><a href="javascript:doNoise2()">Noise v. 2</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="start-sub-menu-3"><a href="#">Grid &nbsp; &#9654;</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="javascript:doGrid1()">Grid v. 1</a></li>
+                                                    <li><a href="javascript:doGrid2()">Grid v. 2</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="start-sub-menu-3"><a href="#">Test for Histogram &nbsp; &#9654;</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="javascript:doTest4Histogram1()">Version 1</a></li>
+                                                    <li><a href="javascript:doTest4Histogram2()">Version 2</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="start-sub-menu-3"><a href="#">Test 1&nbsp; &#9654;</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="javascript:doTest1()">Version 1</a></li>
+                                                    <li><a href="javascript:doTest2()">Version 2</a></li>
+                                                    <li><a href="javascript:doTest3()">Version 3</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="start-sub-menu-3"><a href="#">Test 2&nbsp; &#9654;</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="javascript:doJava1()">Version 1</a></li>
+                                                    <li><a href="javascript:doJava2()">Version 2</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:doClear()">Clear</a></li>
+                            <li><a href="javascript:doMargins()">Margins</a></li>
+                            <li><a href="javascript:doClone()">Clone</a></li>
+                            <li class="start-sub-menu-2"><a href="#">Move &nbsp; &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doMoveO_CW()">Move O CW</a></li>
+                                        <li><a href="javascript:doMoveO_CCW()">Move O CCW</a></li>
+                                        <li><a href="javascript:doMoveZ_R()">Move Z Right</a></li>
+                                        <li><a href="javascript:doMoveZ_L()">Move Z Left</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="start-sub-menu-2"><a href="#">Copy from &nbsp; &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doCopyFrom2()">Copy from 2</a></li>
+                                        <li><a href="javascript:doCopyFrom3()">Copy from 3</a></li>
+                                        <li><a href="javascript:doCopyFrom4()">Copy from 4</a></li>
+                                        <li><a href="javascript:doCopyFrom5()">Copy from 5</a></li>
+                                        <li><a href="javascript:doCopyFrom6()">Copy from 6</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Geometry &#9660;</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li class="start-sub-menu-2"><a href="#">Rotation 90 deg (A) &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doRotation90Axy()">Loop on pixels(xe, ye)</a></li>
+                                        <li><a href="javascript:doRotation90AImageData()">Loop on ImageData</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:doAllRotation()">Rotation K*90 deg</a></li>
+                            <li class="start-sub-menu-2"><a href="#">Rotation Theta &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doRotationsThetaVer1()">Rotation Theta ver. 1</a></li>
+                                        <li><a href="javascript:doRotationsThetaVer2()">Rotation Theta ver. 2</a></li>
+                                        <li><a href="javascript:doRotationsThetaVer3()">Rotation Theta ver. 3</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="start-sub-menu-2"><a href="#">Reflections &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doAllReflectionsVer1()">Reflections ver. 1</a></li>
+                                        <li><a href="javascript:doAllReflectionsVer2()">Reflections ver. 2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="start-sub-menu-2"><a href="#">Pixel Shiffts &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doAllPixelShifftsVer1()">Pixel Shiffts ver. 1</a></li>
+                                        <li><a href="javascript:doAllPixelShifftsVer2()">Pixel Shiffts ver. 2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="start-sub-menu-2"><a href="#">Magnification &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doAllMagnificationVer1()">Magnification ver. 1</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Color &#9660;</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li class="start-sub-menu-2"><a href="#">Channels &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doChannelsColors()">Color channels</a></li>
+                                        <li><a href="javascript:doChannelsGray()">Gray channels</a></li>
+                                        <li><a href="javascript:doTwoChannels()">Two channels</a></li>
+                                        <li><a href="javascript:doChannelCombinations()">Channels comcombinations</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="start-sub-menu-2"><a href="#">Gray/Binary &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doGray()">Gray version</a></li>
+                                        <li><a href="javascript:doBinary()">Binary version</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:doQuantization()">Quantization</a></li>
+                            <li class="start-sub-menu-2"><a href="#">Dark/Bright &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doBrighter()">Brighter</a></li>
+                                        <li><a href="javascript:doDarker()">Darker</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Histogram &#9660;</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li class="start-sub-menu-2"><a href="#">Calculation &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doCalculateHistogram()">Basic algorithm</a></li>
+                                        <li><a href="javascript:doCalculateHistogramOK()">Basic algorithm OK</a></li>
+                                        <li><a href="javascript:doCalculateCumulativeHistogram()">Cumulative algorithm</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="start-sub-menu-2"><a href="#">Correction &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doCorrection()">Basic algorithm</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="start-sub-menu-2"><a href="#">Steganography &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doStep01()">Step 1</a></li>
+                                        <li><a href="javascript:doStep02()">Step 2</a></li>
+                                        <li><a href="javascript:doStep03()">Step 3</a></li>
+                                        <li><a href="javascript:doStep04()">Step 4</a></li>
+                                        <li><a href="javascript:doStep05Preparation()">Step 5 preparation</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Own Work &#9660;</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li class="start-sub-menu-2"><a href="#">Colors &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doSepia()">Sepia</a></li>
+                                        <li><a href="javascript:doNegative()">Negative</a></li>
+                                        <li><a href="javascript:doRainbow()">Rainbows</a></li>
+                                        <li><a href="javascript:doMiddleColor()">Middle Colors</a></li>
+                                        <li><a href="javascript:doMiddleBrightness()">Middle Brightness</a></li>
+                                        <li><a href="javascript:doHueSaturationValue()">Hue/Saturation/Value</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">New Option &#9660;</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li class="start-sub-menu-2"><a href="#">Sub option 1&nbsp; &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doDummy('Subsub option 1-1')">Subsubsub option 1-1</a></li>
+                                        <li><a href="javascript:doDummy('Subsub option 1-2')">Subsubsub option 1-2</a></li>
+                                        <li><a href="javascript:doDummy('Subsub option 1-3')">Subsubsub option 1-3</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="start-sub-menu-2"><a href="#">Sub option 2&nbsp; &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doDummy('Subsub option 2-1')">Subsub option 2-1</a></li>
+                                        <li class="start-sub-menu-3"><a href="#">Subsub option 2-2 &nbsp; &#9654;</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="javascript:doDummy('Subsubsub option 2-2-1')">Subsubsub option 2-2-1</a></li>
+                                                    <li><a href="javascript:doDummy('Subsubsub option 2-2-2')">Subsubsub option 2-2-2</a></li>
+                                                    <li><a href="javascript:doDummy('Subsubsub option 2-2-3')">Subsubsub option 2-2-3</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="javascript:doDummy('Subsub option 2-3')">Subsub option 2-3</a></li>
+                                        <li class="start-sub-menu-3"><a href="#">Subsub option 2-4 &nbsp; &#9654;</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="javascript:doDummy('Subsubsub option 2-4-1')">Subsubsub option 2-4-1</a></li>
+                                                    <li><a href="javascript:doDummy('Subsubsub option 2-4-2')">Subsubsub option 2-4-2</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="start-sub-menu-3"><a href="#">Subsub option 2-5 &nbsp; &#9654;</a>
+                                            <div class="sub-menu-3">
+                                                <ul>
+                                                    <li><a href="javascript:doDummy('Subsubsub option 2-5-1')">Subsubsub option 2-5-1</a></li>
+                                                    <li><a href="javascript:doDummy('Subsubsub option 2-5-2')">Subsubsub option 2-5-2</a></li>
+                                                    <li><a href="javascript:doDummy('Subsubsub option 2-5-3')">Subsubsub option 2-5-3</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:doDummy('Sub option 3')">Sub option 3</a></li>
+                            <li class="start-sub-menu-2"><a href="#">Sub option 4 &nbsp; &#9654;</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="javascript:doDummy('Subsub option 4-1')">Subsub option 4-1</a></li>
+                                        <li><a href="javascript:doDummy('Subsub option 4-2')">Subsub option 4-2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="canvasRow">
+            <canvas id="myCanvas1" class="canvas" width="256" height="256"></canvas>
+            <canvas id="myCanvas2" class="canvas" width="256" height="256"></canvas>
+            <canvas id="myCanvas3" class="canvas" width="256" height="256"></canvas>
+        </div>
+        <div class="canvasRow">
+            <canvas id="myCanvas4" class="canvas" width="256" height="256"></canvas>
+            <canvas id="myCanvas5" class="canvas" width="256" height="256"></canvas>
+            <canvas id="myCanvas6" class="canvas" width="256" height="256"></canvas>
+        </div>
+        <div class="canvasRow">
+            <canvas id="myCanvas7" class="canvasR" width="700" height="25"></canvas>
+            <canvas id="myCanvas8" class="canvasR" width="80" height="25"></canvas>
+        </div>
+    </body>
+</html>

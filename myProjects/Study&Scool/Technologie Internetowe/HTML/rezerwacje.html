@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <title>Pod Wielkim Dębem &nbsp; | &nbsp; Rezerwacje</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="script-rezerwacja.js"></script>
+    </head>
+    <body>
+        <div>
+            <div class="nav">
+                <div id="logo"><img src="logo.png" id="img_logo" alt="logo"/></div>
+                <div id="title">Restauracja pod Wielkim Dębem</div>
+            </div>
+            <div class="left">
+                <a class="link" href="index.html">Strona Główna</a>
+                <a class="link" href="onas.html">O nas</a>
+                <a class="link" href="menu.html">Menu</a>
+                <a class="link" id="this" href="rezerwacje.html">Rezerwacje</a>
+                <a class="link" href="galeria.html">Galeria</a>
+                <a class="link" href="kontakt.html">Kontakt</a>
+
+            </div>
+            <div class="right">
+                <div class="formularz"><form id="rezerw" method="post" onsubmit="return false">
+                    <table>
+                        <tr><th colspan="2">Dane potrzebne do rezerwacji</th></tr>
+                        <tr><td class="tdform">Imię</td><td><input type="text" id="imie" /></td></tr>
+                        <tr><td class="tdform">Nazwisko</td><td><input type="text" id="nazwisko"/></td></tr>
+                        <tr><td class="tdform">E-mail</td><td><input type="email" id="email"/></td></tr>
+                        <tr><td class="tdform">Numer telefonu</td><td><input type="tel" id="phone" value="+48" maxlength="15"/></td></tr>
+                        <tr><td class="tdform">Miejscowość</td><td><input type="text" id="miejscowosc"/></td></tr>
+                        <tr><td class="tdform">Ulica i nr domu</td><td><input type="text" id="ulica"/><input type="text" id="nr"/></td></tr>
+                        <tr><td class="tdform">Kod pocztowy</td><td><input type="text" id="kod" maxlength="6"/></td></tr>
+                        <tr><td colspan="2"><div id="communicate"></div></td></tr>
+                        <tr><td class="tdform"><input type="reset" value="Wyczyść" class="buttom"/></td><td><input type="button" value="Złóż rezerwacje" class="buttom" id="wyslij"/></td></tr>
+                    </table>
+                </form></div>
+            </div>
+            <div class="footer">
+                &copy; Martin Gladis
+            </div>
+        </div>
+    </body>
+</html>
